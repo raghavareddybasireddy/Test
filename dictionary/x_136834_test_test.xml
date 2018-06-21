@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="test" max_length="40" name="x_136834_test_test" type="collection">
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Bluescreen" max_length="40" name="bluescreen" type="string">
+            <choice/>
+        </element>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element choice="3" label="State" max_length="40" name="u_integer_16" type="integer">
+            <choice>
+                <element label="New" sequence="0" value="0"/>
+                <element label="In Progress" sequence="1" value="1"/>
+                <element label="On Hold" sequence="2" value="2"/>
+                <element label="Resolved" sequence="3" value="3"/>
+                <element label="Closed" sequence="4" value="4"/>
+                <element label="Canceled" sequence="5" value="5"/>
+            </choice>
+        </element>
+        <element choice="1" label="Impact" max_length="40" name="u_integer_17" type="integer">
+            <choice>
+                <element label="1-High" sequence="0" value="1"/>
+                <element label="2-Medium" sequence="1" value="2"/>
+                <element label="3-Low" sequence="2" value="3"/>
+            </choice>
+        </element>
+        <element choice="1" label="Urgency" max_length="40" name="u_integer_18" type="integer">
+            <choice>
+                <element label="1-High" sequence="0" value="0"/>
+                <element label="2-Medium" sequence="1" value="1"/>
+                <element label="3-Low" sequence="2" value="2"/>
+            </choice>
+        </element>
+        <element label="Impact" max_length="40" name="u_integer_impact" type="integer"/>
+        <element label="State" max_length="40" name="u_integer_stste" type="integer"/>
+        <element label="Urgency" max_length="40" name="u_integer_urgency" type="integer"/>
+        <element label="Caller" mandatory="true" max_length="32" name="u_reference_14" reference="sys_user" type="reference"/>
+        <element label="Caller" max_length="32" name="u_reference_caller" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" default="Inquiry/Help" label="Category" max_length="40" name="u_string_12" type="string">
+            <choice>
+                <element label="Inquiry/Help" sequence="0" value="Inquiry/Help"/>
+                <element label="Software" sequence="1" value="Software"/>
+                <element label="Hardware" sequence="2" value="Hardware"/>
+                <element label="Network" sequence="3" value="Network"/>
+                <element label="Database" sequence="4" value="Database"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Subcategory" max_length="40" name="u_string_13" type="string">
+            <choice>
+                <element dependent_value="Inquiry" hint="Inquiry/Help" label="Antivirus" sequence="0" value="Antivirus"/>
+                <element dependent_value="Hardware" label="CPU" sequence="1" value="CPU"/>
+                <element dependent_value="Software" label="Operating System" sequence="2" value="Operating System"/>
+                <element dependent_value="Hardware" label="Disk" sequence="3" value="Disk"/>
+                <element label="Hardware" sequence="4" value="Hardware"/>
+                <element dependent_value="Hardware" label="Keyboard" sequence="5" value="Keyboard"/>
+                <element dependent_value="Hardware" label="Memory" sequence="6" value="Memory"/>
+                <element dependent_value="Hardware" label="Moniter" sequence="7" value="Moniter"/>
+                <element dependent_value="Hardware" label="Mouse" sequence="8" value="Mouse"/>
+                <element dependent_value="Network" label="DHCP" sequence="9" value="DHCP"/>
+                <element dependent_value="Network" label="DNS" sequence="10" value="DNS"/>
+                <element dependent_value="Nwtwork" label="IP Address" sequence="11" value="IP Address"/>
+                <element dependent_value="Network" label="VPN" sequence="12" value="VPN"/>
+                <element dependent_value="Network" label="Vireless" sequence="13" value="Vireless"/>
+                <element dependent_value="Database" label="DB2" sequence="14" value="DB2"/>
+                <element dependent_value="Database" label="MS SQL Server" sequence="15" value="MS SQL Server"/>
+                <element label="Oracle" sequence="16" value="Oracle"/>
+                <element dependent_value="Inquiry/Help" label="Email" sequence="17" value="Email"/>
+                <element dependent_value="Inquiry/Help" label="Internal Application" sequence="18" value="Internal Application"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Contact Type" max_length="40" name="u_string_15" type="string">
+            <choice>
+                <element label="Email" sequence="0" value="Email"/>
+                <element label="Phone" sequence="1" value="Phone"/>
+                <element label="Self-service" sequence="2" value="Self-service"/>
+                <element label="Walk-In" sequence="3" value="Walk-In"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Category" max_length="40" name="u_string_category" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Contact Type" max_length="40" name="u_string_contacttype" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Subcategory" max_length="40" name="u_string_subcategory" type="string"/>
+        <index name="index">
+            <element name="u_reference_14"/>
+        </index>
+        <index name="index2">
+            <element name="u_reference_caller"/>
+        </index>
+    </element>
+</database>
